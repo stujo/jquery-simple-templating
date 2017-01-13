@@ -1,37 +1,60 @@
 $(function() {
 
-    var sites = [
-        { label: 'Google', link: 'http://google.com' },
-        { label: 'YouTube', link: 'http://youtube.com' },
-        { label: 'Facebook', link: 'http://facebook.com' },
-        { label: 'Baidu', link: 'http://baidu.com' },
-        { label: 'Yahoo!', link: 'http://yahoo.com' },
-        { label: 'Amazon', link: 'http://amazon.com' },
-        { label: 'Wikipedia', link: 'http://wikipedia.org' },
-        { label: 'Tencent QQ', link: 'http://qq.com' },
-        { label: 'Google India', link: 'http://google.co.in' },
-        { label: 'Twitter', link: 'http://twitter.com' }
-    ];
+  var sites = [
+    {
+      label: 'Google',
+      link: 'http://google.com'
+    },
+    {
+      label: 'YouTube',
+      link: 'http://youtube.com'
+    },
+    {
+      label: 'Facebook',
+      link: 'http://facebook.com'
+    },
+    {
+      label: 'Baidu',
+      link: 'http://baidu.com'
+    },
+    {
+      label: 'Yahoo!',
+      link: 'http://yahoo.com'
+    },
+    {
+      label: 'Amazon',
+      link: 'http://amazon.com'
+    },
+    {
+      label: 'Wikipedia',
+      link: 'http://wikipedia.org'
+    },
+    {
+      label: 'Tencent QQ',
+      link: 'http://qq.com'
+    },
+    {
+      label: 'Google India',
+      link: 'http://google.co.in'
+    },
+    {
+      label: 'Twitter',
+      link: 'http://twitter.com'
+    }
+  ];
 
-    var template = $('#site-list-item').html();
+  var template = $('#site-list-item').html();
 
-    var $list = $('#site-list');
+  console.log(template);
 
-    sites.forEach(function(site){
-       var output = template.replace(/@@@([^@]+)@@@/g,function(matchData, capture){
-           return site[capture];
-       })
-       $list.append(output);
-    });
+  var $list = $('#site-list');
 
+  sites.forEach(function(site) {
 
-    $.ajax({
-      url: '/articles/' + article.id + '/votes', 
-      method: 'POST'
-      data: {color: 'red'}
-    )
-
-
-
+    var output = template.replace(/@@@([^@]+)@@@/g, function(matchData, capture) {
+      return site[capture];
+    })
+    $list.append(output);
+  });
 
 })
